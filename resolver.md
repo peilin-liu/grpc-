@@ -78,6 +78,10 @@ class Resolver : public InternallyRefCounted<Resolver> {
   };
   从上我们看到这里使用工厂模式，通过接口 scheme 来定位具体需要的解析器。
   
-  从这里我们可以推理出，可以自己实现一套解析器，实现自己的实例解析系统。
+  具体解析函数：
+  bool ParseUri(const URI& uri,
+              bool parse(const URI& uri, grpc_resolved_address* dst)
+  
+  从这里我们可以推理出，可以自己实现一套解析器，实现自定义的实例解析系统。
   
   但我们还缺少一套动态增删实例的方案，缺少一套自定义的负载均衡模式。
